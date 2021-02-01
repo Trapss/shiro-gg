@@ -2,7 +2,7 @@
 this is a basic api wrapper node module for the Shrio.gg API.  
 It is capable of fetching all endpoints or fetching an image.  
    
-##Example Usage
+## Example Usage
   
 Fetching an image URL  
 ```js
