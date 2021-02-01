@@ -5,4 +5,10 @@ async function x() {
   console.log(image);
 }
 
+async function y() {
+  let endpoints = await shiro.fetchEndpoints();;
+  console.log(endpoints);
+}
+
 x();
+y();

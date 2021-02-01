@@ -17,15 +17,19 @@ async function returnImageURL(apiEndpoint) {
         return await shiroResponce.url;
 }
 module.exports = {
+    fetchEndpoints: async function detchEndpoints() {
+        let endpoints = await node_fetch_1.default(baseUrl + "endpoints").then((res) => res.json());
+        return endpoints;
+    },
     fetchImage: async function fetchImage(endpointParameter) {
         let endpointFinal;
         let endpoints = await node_fetch_1.default(baseUrl + "endpoints").then((res) => res.json());
-        if (endpoints.sfw.includes('images/' + endpointParameter.toLowerCase())) {
-            endpointFinal = 'images/' + endpointParameter;
+        if (endpoints.sfw.includes("images/" + endpointParameter.toLowerCase())) {
+            endpointFinal = "images/" + endpointParameter;
             return await returnImageURL(endpointFinal);
         }
-        else if (endpoints.nsfw.includes('images/nsfw/' + endpointParameter)) {
-            endpointFinal = 'images/nsfw/' + endpointParameter;
+        else if (endpoints.nsfw.includes("images/nsfw/" + endpointParameter)) {
+            endpointFinal = "images/nsfw/" + endpointParameter;
             return await returnImageURL(endpointFinal);
         }
         else {

@@ -25,6 +25,14 @@ async function returnImageURL(apiEndpoint: string) {
 }
 
 module.exports = {
+  fetchEndpoints: async function detchEndpoints() {
+    let endpoints: Endpoints = await fetch(baseUrl + "endpoints").then((res) =>
+      res.json()
+    );
+
+    return endpoints;
+  },
+
   fetchImage: async function fetchImage(endpointParameter: string) {
     let endpointFinal: string;
     let endpoints: Endpoints = await fetch(baseUrl + "endpoints").then((res) =>
