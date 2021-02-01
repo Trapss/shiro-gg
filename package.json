@@ -1,0 +1,26 @@
+{
+  "name": "shiro-gg",
+  "version": "1.0.0",
+  "description": "api wrapper for shiro.gg written in ts",
+  "main": "index.js",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "typescript": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.8"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trapss/shiro-gg.git"
+  },
+  "author": "iTrqPss",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trapss/shiro-gg/issues"
+  },
+  "homepage": "https://github.com/Trapss/shiro-gg#readme"
+}
