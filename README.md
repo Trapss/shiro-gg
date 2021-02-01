@@ -23,4 +23,4 @@ async function y() {
 
 y();
 ```
-More example usage can be found in the (shiro.gg demonstration bot)[https://github.com/trapss/shiroDemo]  
+More example usage can be found in the [shiro.gg demonstration bot](https://github.com/trapss/shiroDemo) 
