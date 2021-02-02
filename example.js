@@ -1,8 +1,8 @@
 const shiro = require(".");
 
 async function x() {
-  let image = await shiro.fetchImage("pat");
-  console.log(image);
+  let image = await shiro.fetchImage("nom");
+  console.log(image.url);
 }
 
 async function y() {
@@ -10,5 +10,15 @@ async function y() {
   console.log(endpoints);
 }
 
+async function z() {
+  let image = await shiro.fetchImage("pat");
+  if (image.nsfw) {
+    console.log('image is nsfw')
+  } else {
+    console.log('image is not nsfw')
+  }
+}
+
 x();
 y();
+z();

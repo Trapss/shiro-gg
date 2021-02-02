@@ -7,6 +7,9 @@ const node_fetch_1 = __importDefault(require("node-fetch"));
 let baseUrl = "https://shiro.gg/api/";
 async function returnImageURL(apiEndpoint) {
     let shiroResponce = await node_fetch_1.default(baseUrl + apiEndpoint).then((res) => res.json());
+    if (apiEndpoint.includes('nsfw')) {
+        shiroResponce.nsfw = true;
+    }
     if (!shiroResponce)
         return console.error("No Responce from Shiro.gg");
     else if (shiroResponce.code !== 200)
@@ -14,7 +17,7 @@ async function returnImageURL(apiEndpoint) {
     else if (!shiroResponce.url)
         return console.error("Missing Image URL");
     else
-        return await shiroResponce.url;
+        return await shiroResponce;
 }
 module.exports = {
     fetchEndpoints: async function detchEndpoints() {
@@ -26,7 +29,8 @@ module.exports = {
         let endpoints = await node_fetch_1.default(baseUrl + "endpoints").then((res) => res.json());
         if (endpoints.sfw.includes("images/" + endpointParameter.toLowerCase())) {
             endpointFinal = "images/" + endpointParameter;
-            return await returnImageURL(endpointFinal);
+            let responce = await returnImageURL(endpointFinal);
+            return await responce;
         }
         else if (endpoints.nsfw.includes("images/nsfw/" + endpointParameter)) {
             endpointFinal = "images/nsfw/" + endpointParameter;
