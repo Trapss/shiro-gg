@@ -2,7 +2,9 @@ const shiro = require(".");
 
 async function x() {
   let image = await shiro.fetchImage("nom");
-  console.log(image.url);
+  if (image.code == 200)
+    console.log(image.url);
+  else return console.log("There was an error.")
 }
 
 async function y() {

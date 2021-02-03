@@ -25,9 +25,6 @@ async function returnImage(apiEndpoint: string) {
   }
 
   if (!shiroResponce) return console.error("No Responce from Shiro.gg");
-  else if (shiroResponce.code !== 200)
-    return console.error("Invalid Responce Code");
-  else if (!shiroResponce.url) return console.error("Missing Image URL");
   else return await shiroResponce;
 }
 
