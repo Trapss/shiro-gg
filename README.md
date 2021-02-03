@@ -57,7 +57,7 @@ z();
 ```  
 
 Using in a Discord bot
-```
+```js
 async function shiroImage(endpoint) {
   let imgObject = await shiro.fetchImage(endpoint);
 
