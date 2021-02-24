@@ -35,7 +35,7 @@ x();
 Fetching all endpoints  
 ```js
 async function y() {
-  let endpoints = await shiro.fetchEndpoints();;
+  let endpoints = await shiro.fetchEndpoints();
   console.log(endpoints);
 }
 
