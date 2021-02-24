@@ -5,8 +5,8 @@ It is capable of fetching all endpoints or fetching an image.
 ## Responce Structure  
 ```js
   Image {
-    "code": "xxx",
-    "nsfw": "t-f",
+    "code": "int",
+    "nsfw": "boolean",
     "url": "https://shiro.gg/api/images/xxx"
   }
 ```
